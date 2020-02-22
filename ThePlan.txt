@@ -1,0 +1,47 @@
+DataSet of Images below
+https://storage.googleapis.com/openimages/web/download.html
+Digital and Analog clocks can be found in the link above
+
+Process
+Step1: Train to find clocks
+       Train to identity of time
+              ->Digital just read numbers
+                  ->Erdode to combine digital numbers
+                    ->Blur
+                    ->Pytesseract read
+              ->Train read analog create model
+Step2: Crawl through movie for watches
+      ->Zipped folder of movies
+      ->List of movies that have been analyzed
+      ->Create database entry for database object
+      ->Integrate spark once test case has been solved
+      ->Look for Digital or Analog clock, if found solve for time if time i found:
+          ->create clock object
+          ->add clock info to database
+          ->crop movie and save minute period (30 second before and 30 second after)
+Dataobject for a clock-final
+
+clock->time
+  ->typeofclock
+  ->source
+  ->timeBounding
+  ->id
+  ->name = time_source
+  
+ Step 3: Create finalCutVideos
+ ->Query for a time
+ ->Make a random choice of avaliable times
+ combine cuts for 5-15 minute intervals
+ finalCut->startTime
+        ->endTime
+        ->videoList
+        ->videoTitleList
+        ->cutTimes
+        ->name = startTime_endTime_index
+        '''5 minutes long
+ 
+ 
+ 
+ Step 4: Master Loop 
+ At some point multithread that loads while videos playing
+  
